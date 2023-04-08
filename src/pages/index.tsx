@@ -1,10 +1,21 @@
 import Head from "next/head";
 import Image from "next/image";
+import { Fragment, useState } from "react";
 import logo from "~/assets/logo.svg";
 
 const title = "Desenvolvendo uma web acessível";
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  function handleOpenModal() {
+    setIsModalOpen(true);
+  }
+
+  function handleCloseModal() {
+    setIsModalOpen(false);
+  }
+
   return (
     <div className="flex min-h-screen flex-col">
       <Head>
@@ -83,13 +94,41 @@ export default function Home() {
       <footer className="mx-auto mt-auto flex w-full max-w-[1024px] items-center justify-between px-5 py-6">
         <Image src={logo} width={286 / 2} alt="Blog da Rocketseat" />
 
-        <a
-          href="#"
+        <button
+          onClick={handleOpenModal}
           className="rounded-md bg-rocketseat-shape px-8 py-4 text-rocketseat-secondary hover:underline"
         >
           Termos de uso
-        </a>
+        </button>
       </footer>
+
+      {isModalOpen && (
+        <Fragment>
+          <div
+            aria-hidden="true"
+            className="fixed inset-0 bg-black/30 backdrop-blur-xs"
+          />
+
+          <div className="fixed left-1/2 top-1/2 z-50 max-w-md -translate-x-1/2 -translate-y-1/2 rounded-md bg-white p-6 text-[#333]">
+            <button
+              title="Fechar"
+              onClick={handleCloseModal}
+              className="absolute right-4 top-2 rounded-full p-0.5 text-xl"
+            >
+              &times;
+            </button>
+
+            <h2 className="text-center text-2xl font-bold">Termos de uso</h2>
+
+            <p className="mt-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut nemo
+              tenetur beatae, aliquam commodi sapiente impedit minima voluptate
+              ad consequatur labore iste facilis nisi placeat excepturi soluta
+              odit. Iusto, voluptatibus.
+            </p>
+          </div>
+        </Fragment>
+      )}
     </div>
   );
 }

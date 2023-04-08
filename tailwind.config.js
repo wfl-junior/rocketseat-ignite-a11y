@@ -21,6 +21,9 @@ module.exports = {
           secondary: "#996DFF",
         },
       },
+      backdropBlur: {
+        xs: "2px",
+      },
     },
   },
   plugins: [],
