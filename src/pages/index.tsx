@@ -3,20 +3,21 @@ import logo from "~/assets/logo.svg";
 
 export default function Home() {
   return (
-    <div>
+    <main>
       <header className="mx-auto flex w-full max-w-[1024px] items-center justify-between px-5 py-6">
         <Image src={logo} alt="" width={286 / 2} />
 
         <nav>
           <a
             target="_blank"
+            title="GitHub wfl-junior"
             className="text-rocketseat-primary"
             href="https://github.com/wfl-junior"
           >
             <svg
               stroke="currentColor"
               fill="currentColor"
-              stroke-width="0"
+              strokeWidth="0"
               viewBox="0 0 512 512"
               height="28"
               width="28"
@@ -31,15 +32,15 @@ export default function Home() {
         </nav>
       </header>
 
-      <div className="mx-auto w-full max-w-[776px] px-5 py-6 text-[#555] [&>p]:my-5">
-        <h2 className="mb-5 text-2xl font-bold">
+      <div className="mx-auto w-full max-w-[776px] px-5 py-6 [&>p]:my-5">
+        <h1 className="mb-5 text-3xl font-bold">
           Desenvolvendo uma web acessível
-        </h2>
+        </h1>
 
-        <h4 className="text-lg font-bold">
+        <h2 className="text-lg font-bold">
           Protocolos e diretrizes orientam o desenvolvimento de tecnologias
           acessíveis, mas é preciso olhar para além de tudo isso
-        </h4>
+        </h2>
 
         <p>
           Acessibilidade se tornou uma tendência no ecossistema tecnológico
@@ -68,6 +69,6 @@ export default function Home() {
           definições:
         </p>
       </div>
-    </div>
+    </main>
   );
 }
