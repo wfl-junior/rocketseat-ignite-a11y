@@ -1,11 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import logo from "~/assets/logo.svg";
 
 const title = "Desenvolvendo uma web acessível";
 
 export default function Home() {
+  const modalRef = useRef<HTMLDivElement>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   function handleOpenModal() {
@@ -15,6 +16,11 @@ export default function Home() {
   function handleCloseModal() {
     setIsModalOpen(false);
   }
+
+  useEffect(() => {
+    if (!isModalOpen) return;
+    modalRef.current?.focus();
+  }, [isModalOpen]);
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -96,6 +102,8 @@ export default function Home() {
 
         <button
           onClick={handleOpenModal}
+          aria-controls="terms-modal"
+          aria-expanded={isModalOpen}
           className="rounded-md bg-rocketseat-shape px-8 py-4 text-rocketseat-secondary hover:underline"
         >
           Termos de uso
@@ -109,18 +117,28 @@ export default function Home() {
             className="fixed inset-0 bg-black/30 backdrop-blur-xs"
           />
 
-          <div className="fixed left-1/2 top-1/2 z-50 max-w-md -translate-x-1/2 -translate-y-1/2 rounded-md bg-white p-6 text-[#333]">
+          <div
+            role="dialog"
+            tabIndex={-1}
+            ref={modalRef}
+            id="terms-modal"
+            aria-labelledby="terms-title"
+            aria-describedby="terms-description"
+            className="fixed left-1/2 top-1/2 z-50 max-w-md -translate-x-1/2 -translate-y-1/2 rounded-md bg-rocketseat-shape p-6 shadow-lg"
+          >
             <button
               title="Fechar"
               onClick={handleCloseModal}
-              className="absolute right-4 top-2 rounded-full p-0.5 text-xl"
+              className="absolute right-4 top-2 rounded-full p-0.5 text-xl leading-none"
             >
               &times;
             </button>
 
-            <h2 className="text-center text-2xl font-bold">Termos de uso</h2>
+            <h2 id="terms-title" className="text-center text-2xl font-bold">
+              Termos de uso
+            </h2>
 
-            <p className="mt-4">
+            <p id="terms-description" className="mt-4">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut nemo
               tenetur beatae, aliquam commodi sapiente impedit minima voluptate
               ad consequatur labore iste facilis nisi placeat excepturi soluta
