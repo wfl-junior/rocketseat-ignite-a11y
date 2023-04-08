@@ -1,10 +1,9 @@
 import Image from "next/image";
-import { Fragment } from "react";
 import logo from "~/assets/logo.svg";
 
 export default function Home() {
   return (
-    <Fragment>
+    <div className="flex min-h-screen flex-col">
       <header className="mx-auto flex w-full max-w-[1024px] items-center justify-between px-5 py-6">
         <Image src={logo} width={286 / 2} alt="Blog da Rocketseat" />
 
@@ -35,7 +34,7 @@ export default function Home() {
       </header>
 
       <main className="mx-auto w-full max-w-[776px] px-5 py-6">
-        <article className="[&>p]:my-5 [&>p]:text-gray-400">
+        <article className="[&>p]:my-5">
           <header>
             <h1 className="mb-5 text-3xl font-bold">
               Desenvolvendo uma web acessível
@@ -75,6 +74,17 @@ export default function Home() {
           </p>
         </article>
       </main>
-    </Fragment>
+
+      <footer className="mx-auto mt-auto flex w-full max-w-[1024px] items-center justify-between px-5 py-6">
+        <Image src={logo} width={286 / 2} alt="Blog da Rocketseat" />
+
+        <a
+          href="#"
+          className="rounded-md bg-rocketseat-shape px-8 py-4 text-rocketseat-secondary hover:underline"
+        >
+          Termos de uso
+        </a>
+      </footer>
+    </div>
   );
 }

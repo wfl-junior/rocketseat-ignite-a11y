@@ -16,6 +16,9 @@ module.exports = {
         rocketseat: {
           background: "#121214",
           primary: "#8257E5",
+          text: "#A8A8B3",
+          shape: "#202024",
+          secondary: "#996DFF",
         },
       },
     },

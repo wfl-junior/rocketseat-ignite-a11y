@@ -18,7 +18,7 @@ export default function Document() {
         />
       </Head>
 
-      <body className="flex min-h-screen flex-col bg-rocketseat-background text-gray-100">
+      <body className="bg-rocketseat-background text-rocketseat-text">
         <Main />
         <NextScript />
       </body>
