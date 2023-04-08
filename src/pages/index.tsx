@@ -1,9 +1,16 @@
+import Head from "next/head";
 import Image from "next/image";
 import logo from "~/assets/logo.svg";
+
+const title = "Desenvolvendo uma web acessível";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
+      <Head>
+        <title>{title} | Rocketseat</title>
+      </Head>
+
       <header className="mx-auto flex w-full max-w-[1024px] items-center justify-between px-5 py-6">
         <Image src={logo} width={286 / 2} alt="Blog da Rocketseat" />
 
@@ -36,11 +43,9 @@ export default function Home() {
       <main className="mx-auto w-full max-w-[776px] px-5 py-6">
         <article className="[&>p]:my-5">
           <header>
-            <h1 className="mb-5 text-3xl font-bold">
-              Desenvolvendo uma web acessível
-            </h1>
+            <h1 className="mb-5 text-3xl font-bold">{title}</h1>
 
-            <h2 className="text-lg font-bold">
+            <h2 className="text-xl font-bold">
               Protocolos e diretrizes orientam o desenvolvimento de tecnologias
               acessíveis, mas é preciso olhar para além de tudo isso
             </h2>
@@ -64,7 +69,7 @@ export default function Home() {
             afirmação está na W3C.
           </p>
 
-          <h3 className="text-xl font-bold">O que é acessibilidade, afinal?</h3>
+          <h2 className="text-xl font-bold">O que é acessibilidade, afinal?</h2>
 
           <p>
             Para entender o que é acessibilidade, vamos unir três termos que se
