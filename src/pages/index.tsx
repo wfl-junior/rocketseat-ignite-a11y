@@ -1,13 +1,14 @@
 import Image from "next/image";
+import { Fragment } from "react";
 import logo from "~/assets/logo.svg";
 
 export default function Home() {
   return (
-    <main>
+    <Fragment>
       <header className="mx-auto flex w-full max-w-[1024px] items-center justify-between px-5 py-6">
-        <Image src={logo} alt="" width={286 / 2} />
+        <Image src={logo} alt="Blog" width={286 / 2} />
 
-        <nav>
+        <nav aria-label="Principal">
           <a
             target="_blank"
             title="GitHub wfl-junior"
@@ -32,43 +33,47 @@ export default function Home() {
         </nav>
       </header>
 
-      <div className="mx-auto w-full max-w-[776px] px-5 py-6 [&>p]:my-5">
-        <h1 className="mb-5 text-3xl font-bold">
-          Desenvolvendo uma web acessível
-        </h1>
+      <main className="mx-auto w-full max-w-[776px] px-5 py-6">
+        <article className="[&>p]:my-5">
+          <header>
+            <h1 className="mb-5 text-3xl font-bold">
+              Desenvolvendo uma web acessível
+            </h1>
 
-        <h2 className="text-lg font-bold">
-          Protocolos e diretrizes orientam o desenvolvimento de tecnologias
-          acessíveis, mas é preciso olhar para além de tudo isso
-        </h2>
+            <h2 className="text-lg font-bold">
+              Protocolos e diretrizes orientam o desenvolvimento de tecnologias
+              acessíveis, mas é preciso olhar para além de tudo isso
+            </h2>
+          </header>
 
-        <p>
-          Acessibilidade se tornou uma tendência no ecossistema tecnológico
-          mundial, diversas empresas passaram a adotar critérios de
-          desenvolvimento acessível em seus projetos — por uma questão prática
-          ou por exigências legais —, no entanto, ainda faltam recursos e
-          consciência do que de fato é inclusivo na internet para pessoas com
-          deficiências.
-        </p>
+          <p>
+            Acessibilidade se tornou uma tendência no ecossistema tecnológico
+            mundial, diversas empresas passaram a adotar critérios de
+            desenvolvimento acessível em seus projetos — por uma questão prática
+            ou por exigências legais —, no entanto, ainda faltam recursos e
+            consciência do que de fato é inclusivo na internet para pessoas com
+            deficiências.
+          </p>
 
-        <p>
-          Para abordar este tema, é preciso ter uma perspectiva cultural sobre o
-          assunto, não encará-lo apenas na ótica técnica ou prática.
-          Acessibilidade passou a ser vista como um desafio (ou tendência) para
-          o ecossistema tech e não como filosofia natural daquilo que condiz com
-          os princípios básicos da web: acessível para humanos. Tal afirmação
-          está na W3C.
-        </p>
+          <p>
+            Para abordar este tema, é preciso ter uma perspectiva cultural sobre
+            o assunto, não encará-lo apenas na ótica técnica ou prática.
+            Acessibilidade passou a ser vista como um desafio (ou tendência)
+            para o ecossistema tech e não como filosofia natural daquilo que
+            condiz com os princípios básicos da web: acessível para humanos. Tal
+            afirmação está na W3C.
+          </p>
 
-        <h3 className="text-xl font-bold">O que é acessibilidade, afinal?</h3>
+          <h3 className="text-xl font-bold">O que é acessibilidade, afinal?</h3>
 
-        <p>
-          Para entender o que é acessibilidade, vamos unir três termos que se
-          interligam e estão conectados de alguma maneira: acessibilidade,
-          usabilidade e inclusão. Seguindo a cartilha da W3C temos as seguintes
-          definições:
-        </p>
-      </div>
-    </main>
+          <p>
+            Para entender o que é acessibilidade, vamos unir três termos que se
+            interligam e estão conectados de alguma maneira: acessibilidade,
+            usabilidade e inclusão. Seguindo a cartilha da W3C temos as
+            seguintes definições:
+          </p>
+        </article>
+      </main>
+    </Fragment>
   );
 }
