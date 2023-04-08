@@ -6,22 +6,23 @@ export default function Home() {
   return (
     <Fragment>
       <header className="mx-auto flex w-full max-w-[1024px] items-center justify-between px-5 py-6">
-        <Image src={logo} alt="Blog" width={286 / 2} />
+        <Image src={logo} width={286 / 2} alt="Blog da Rocketseat" />
 
         <nav aria-label="Principal">
           <a
             target="_blank"
-            title="GitHub wfl-junior"
-            className="text-rocketseat-primary"
             href="https://github.com/wfl-junior"
+            className="text-rocketseat-primary"
+            title="Acessar o GitHub de wfl-junior"
           >
             <svg
-              stroke="currentColor"
-              fill="currentColor"
-              strokeWidth="0"
-              viewBox="0 0 512 512"
-              height="28"
               width="28"
+              height="28"
+              strokeWidth="0"
+              fill="currentColor"
+              aria-label="GitHub"
+              viewBox="0 0 512 512"
+              stroke="currentColor"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -34,7 +35,7 @@ export default function Home() {
       </header>
 
       <main className="mx-auto w-full max-w-[776px] px-5 py-6">
-        <article className="[&>p]:my-5">
+        <article className="[&>p]:my-5 [&>p]:text-gray-400">
           <header>
             <h1 className="mb-5 text-3xl font-bold">
               Desenvolvendo uma web acessível
